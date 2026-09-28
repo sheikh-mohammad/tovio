@@ -3,6 +3,7 @@ import React, { useState } from "react";
 const TodoApp = () => {
   const [inputValue, setInputValue] = useState("");
   const [todos, setTodos] = useState([]);
+  const [editValue, setEditValue] = useState("");
 
   const todoHandler = (e) => {
     e.preventDefault();
@@ -21,6 +22,8 @@ const TodoApp = () => {
 
     console.log(todos);
   };
+
+  const editTodo = () => {};
 
   return (
     <>
@@ -43,7 +46,7 @@ const TodoApp = () => {
           {todos.map((value, index) => {
             return (
               <li key={index}>
-                {value} <button>Edit</button>
+                {value} <button onClick={editTodo}>Edit</button>
                 <button>Delete</button>
               </li>
             );
