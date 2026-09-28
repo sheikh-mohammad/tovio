@@ -16,6 +16,12 @@ const TodoApp = () => {
     console.log(todos);
   };
 
+  const deleteAll = () => {
+    setTodos([]);
+
+    console.log(todos);
+  };
+
   return (
     <>
       <h1>Tovio</h1>
@@ -27,7 +33,9 @@ const TodoApp = () => {
           onChange={(e) => setInputValue(e.target.value)}
         />
         <button>Add</button>
-        <button type="button">Delete All</button>
+        <button onClick={deleteAll} type="button">
+          Delete All
+        </button>
       </form>
 
       <div>
@@ -41,14 +49,6 @@ const TodoApp = () => {
             );
           })}
         </ul>
-        {/* <li>
-            Task 1 <button>Edit</button>
-            <button>Delete</button>
-          </li>
-          <li>
-            Task 2 <button>Edit</button>
-            <button>Delete</button>
-          </li> */}
       </div>
     </>
   );
